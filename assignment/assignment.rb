@@ -17,6 +17,10 @@ class Assignment
       # accept a hash of todolist properties (`:name` and `:due_date`) as an input parameter. Note these are not 100% the same as Model class.
       # use the TodoList Model class to create a new user in the DB
       # return an instance of the class with primary key (`id`), and dates (`created_at` and `updated_at`) assigned
+      # t = TodoList.new( params.map { |k, v| ["list_#{k}", v] } )
+      t = TodoList.new(list_name: params[:name], list_due_date: params[:due_date])
+      t.save
+      t
   end
 
   #
